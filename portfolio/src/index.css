@@ -17,9 +17,7 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  * {
-    scroll-behavior: smooth;
-  }
+
 }
 
 @layer components {
@@ -139,6 +137,16 @@
 }
 
 @layer utilities {
+  /* Hide all scrollbars globally */
+  * {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
+
+  *::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+
   /* Custom scrollbar styling */
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
