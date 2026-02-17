@@ -506,6 +506,49 @@
     animation-play-state: paused;
   }
 
+  /* Wave animations for background */
+  @keyframes wave-slow {
+    0%, 100% {
+      transform: translateX(0) translateY(0);
+    }
+    50% {
+      transform: translateX(-25%) translateY(-5%);
+    }
+  }
+
+  @keyframes wave-medium {
+    0%, 100% {
+      transform: translateX(0) translateY(0);
+    }
+    50% {
+      transform: translateX(25%) translateY(-3%);
+    }
+  }
+
+  @keyframes wave-fast {
+    0%, 100% {
+      transform: translateX(0) translateY(0);
+    }
+    50% {
+      transform: translateX(-20%) translateY(-2%);
+    }
+  }
+
+  .animate-wave-slow {
+    animation: wave-slow 20s ease-in-out infinite;
+    will-change: transform;
+  }
+
+  .animate-wave-medium {
+    animation: wave-medium 15s ease-in-out infinite;
+    will-change: transform;
+  }
+
+  .animate-wave-fast {
+    animation: wave-fast 10s ease-in-out infinite;
+    will-change: transform;
+  }
+
   /* Shine animation for rotating title */
   @keyframes shine {
     0% {
