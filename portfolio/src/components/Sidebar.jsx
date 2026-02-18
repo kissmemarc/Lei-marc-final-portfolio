@@ -53,7 +53,7 @@ const Sidebar = () => {
             isDark ? 'neu-raised-dark' : 'neu-raised'
           }`}>
             <img
-              src={isDark ? "/lei.jpg" : "/lei.jpg"}
+              src={isDark ? "/profile2-light.png" : "/profile2-light.png"}
               alt="Profile"
               className="w-full h-full object-cover transition-all duration-500"
               onError={(e) => {
