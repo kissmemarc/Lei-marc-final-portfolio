@@ -11,7 +11,7 @@ const Sidebar = () => {
   const titles = [
     'Web Developer',
     'Frontend Developer',
-    'QA Tester',
+    'UI/UX Designer',
     'Information Technology',
     'Future Millionaire'
   ];
@@ -53,7 +53,7 @@ const Sidebar = () => {
             isDark ? 'neu-raised-dark' : 'neu-raised'
           }`}>
             <img
-              src={isDark ? "/profile2-light.png" : "/profile2-light.png"}
+              src={isDark ? "/lei.jpg" : "/lei.jpg"}
               alt="Profile"
               className="w-full h-full object-cover transition-all duration-500"
               onError={(e) => {

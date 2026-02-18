@@ -102,7 +102,7 @@ const About = () => {
       {/* Condensed single paragraph with smaller font */}
       <div className="animate-fade-in-up stagger-1">
         <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
-          Hi! I’m an undergraduate student pursuing a degree in Information Technology, specializing in <span className="font-bold text-primary">Software Developement</span> with technology such as <span className="font-semibold text-gray-900 dark:text-white">Javascript, Php, and React</span> .
+          Hi! I’m an undergraduate student pursuing a degree in Information Technology, specializing in <span className="font-bold text-primary">Web Developement</span> with technology such as <span className="font-semibold text-gray-900 dark:text-white">Javascript, Php, and React</span> .
            My focus areas include cross-platform applications, scalable backend architectures, and modern UI/UX design. 
            I am seeking an entry-level IT position where I can apply my knowledge of software development and system troubleshooting, 
            while continuously learning and growing in a collaborative, fast-paced environment.
