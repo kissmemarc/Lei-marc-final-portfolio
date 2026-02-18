@@ -506,47 +506,100 @@
     animation-play-state: paused;
   }
 
-  /* Wave animations for background */
-  @keyframes wave-slow {
+  /* Optimized Wave animations for background - GPU accelerated */
+  @keyframes wave-1 {
     0%, 100% {
-      transform: translateX(0) translateY(0);
+      transform: translate3d(0, 0, 0) scale(1);
+      border-radius: 45% 55% 50% 50%;
+    }
+    25% {
+      transform: translate3d(-5%, -3%, 0) scale(1.05);
+      border-radius: 50% 50% 45% 55%;
     }
     50% {
-      transform: translateX(-25%) translateY(-5%);
+      transform: translate3d(-8%, -5%, 0) scale(1.08);
+      border-radius: 55% 45% 50% 50%;
+    }
+    75% {
+      transform: translate3d(-5%, -3%, 0) scale(1.05);
+      border-radius: 50% 50% 55% 45%;
     }
   }
 
-  @keyframes wave-medium {
+  @keyframes wave-2 {
     0%, 100% {
-      transform: translateX(0) translateY(0);
+      transform: translate3d(0, 0, 0) scale(1);
+      border-radius: 50% 50% 45% 55%;
+    }
+    25% {
+      transform: translate3d(5%, -2%, 0) scale(1.04);
+      border-radius: 45% 55% 50% 50%;
     }
     50% {
-      transform: translateX(25%) translateY(-3%);
+      transform: translate3d(8%, -4%, 0) scale(1.06);
+      border-radius: 50% 50% 55% 45%;
+    }
+    75% {
+      transform: translate3d(5%, -2%, 0) scale(1.04);
+      border-radius: 55% 45% 50% 50%;
     }
   }
 
-  @keyframes wave-fast {
+  @keyframes wave-3 {
     0%, 100% {
-      transform: translateX(0) translateY(0);
+      transform: translate3d(0, 0, 0) scale(1);
+      border-radius: 55% 45% 50% 50%;
+    }
+    25% {
+      transform: translate3d(-4%, -2%, 0) scale(1.03);
+      border-radius: 50% 50% 55% 45%;
     }
     50% {
-      transform: translateX(-20%) translateY(-2%);
+      transform: translate3d(-6%, -3%, 0) scale(1.05);
+      border-radius: 45% 55% 50% 50%;
+    }
+    75% {
+      transform: translate3d(-4%, -2%, 0) scale(1.03);
+      border-radius: 50% 50% 45% 55%;
     }
   }
 
-  .animate-wave-slow {
-    animation: wave-slow 20s ease-in-out infinite;
+  .animate-wave-1 {
+    animation: wave-1 20s ease-in-out infinite;
     will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
   }
 
-  .animate-wave-medium {
-    animation: wave-medium 15s ease-in-out infinite;
+  .animate-wave-2 {
+    animation: wave-2 15s ease-in-out infinite;
     will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
   }
 
-  .animate-wave-fast {
-    animation: wave-fast 10s ease-in-out infinite;
+  .animate-wave-3 {
+    animation: wave-3 10s ease-in-out infinite;
     will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+
+  /* Optimized floating animation for mobile */
+  @keyframes float-optimized {
+    0%, 100% {
+      transform: translate3d(0, 0, 0);
+    }
+    50% {
+      transform: translate3d(0, -15px, 0);
+    }
+  }
+
+  .animate-float-optimized {
+    animation: float-optimized 3s ease-in-out infinite;
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
   }
 
   /* Shine animation for rotating title */
@@ -563,36 +616,64 @@
     animation: shine 3s ease-in-out infinite;
   }
 
-  /* Wobble animation */
+  /* Wobble animation - Simulates hanging ID card swaying */
   @keyframes wobble {
-    0%, 100% {
+    0% {
       transform: rotate(0deg);
-      transform-origin: top center;
     }
-    15% {
-      transform: rotate(-5deg);
-      transform-origin: top center;
+    10% {
+      transform: rotate(-8deg);
+    }
+    20% {
+      transform: rotate(6deg);
     }
     30% {
-      transform: rotate(4deg);
-      transform-origin: top center;
+      transform: rotate(-5deg);
     }
-    45% {
+    40% {
+      transform: rotate(4deg);
+    }
+    50% {
       transform: rotate(-3deg);
-      transform-origin: top center;
     }
     60% {
       transform: rotate(2deg);
-      transform-origin: top center;
     }
-    75% {
-      transform: rotate(-1deg);
-      transform-origin: top center;
+    70% {
+      transform: rotate(-1.5deg);
+    }
+    80% {
+      transform: rotate(1deg);
+    }
+    90% {
+      transform: rotate(-0.5deg);
+    }
+    100% {
+      transform: rotate(0deg);
     }
   }
 
   .animate-wobble {
-    animation: wobble 2.5s ease-in-out forwards;
+    animation: wobble 3s ease-in-out forwards;
+    transform-origin: top center;
+  }
+
+  /* Subtle continuous sway for ID card (optional hover effect) */
+  @keyframes gentle-sway {
+    0%, 100% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(-1deg);
+    }
+    75% {
+      transform: rotate(1deg);
+    }
+  }
+
+  .animate-gentle-sway {
+    animation: gentle-sway 4s ease-in-out infinite;
+    transform-origin: top center;
   }
 
   /* Animated gradient background */
